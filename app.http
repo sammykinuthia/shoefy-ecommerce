@@ -1,0 +1,44 @@
+
+
+GET http://localhost:3030/users
+
+
+
+### Register user
+POST http://localhost:3030/users/register
+Content-Type: application/json
+
+{
+    "username":"sammy",
+    "email":"samuelmwaniki17@gmail.com",
+    "password":"sammy"
+}
+
+
+### Login
+POST http://localhost:3030/users/login
+Content-Type: application/json
+
+{
+    "email":"samuelmwaniki17@gmail.com",
+    "password":"sammy"
+}
+
+
+
+### Reset password
+POST http://localhost:3030/users/reset
+Content-Type: application/json
+
+{
+    "email":"samuelmwaniki17@gmail.com"
+}
+
+### Confirm code
+POST http://localhost:3030/users/verifycode
+Content-Type: application/json
+
+{
+    "email":"samuelmwaniki17@gmail.com",
+    "code":"fe00"
+}
