@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./statics/css/reset.css">
     <link rel="stylesheet" href="./statics/css/styles.css">
+    <script type="module" defer src="./statics/js/global.js"></script>
+    <script type="module" defer src="./statics/js/addProduct.js"></script>
     <title>Shoefy</title>
 </head>
+
 <body>
-    
+    <header id="header">
+
+    </header>
+    <main class="container">
+        <div class="add-product">
+            <h3>Add product</h3>
+            <form id="form" enctype="multipart/form-data">
+                <label>
+                    Product Name
+                    <input name="name" id="name" type="text">
+                </label>
+                <label>
+                    Product Price
+                    <input name="price" id="price" type="text">
+                </label>
+                <label>
+                    Product Category
+                    <select name="category" id="category">
+                        <option value="">Select category</option>
+                    </select>
+                </label>
+                <label>
+                    Product Image
+                    <input type="file" name="image" id="image">
+                </label>
+                <label >
+                    Product Description
+                    <textarea name="description" id="description"></textarea>
+                </label>
+                <div>
+                    <button type="submit">Add product</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
 </body>
+
 </html>
