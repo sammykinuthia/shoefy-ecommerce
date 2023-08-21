@@ -165,3 +165,16 @@ export const changePassword = async (req, res) => {
         res.status(500).json({ error: error.message })
     }
 }
+
+export const verifyUser = async(req,res)=>{
+    try {
+        if(req.info){
+            res.status(200).json(req.info)
+        }
+        else{
+            res.status(401).json({message:"token not found"})
+        }
+    } catch (error) {
+        res.status(500).json({ error: error.message })
+    }
+}

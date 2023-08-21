@@ -1,9 +1,4 @@
 
-
-GET http://localhost:3030/users
-
-
-
 ### Register user
 POST http://localhost:3030/users/register
 Content-Type: application/json
@@ -21,9 +16,8 @@ Content-Type: application/json
 
 {
     "email":"samuelmwaniki17@gmail.com",
-    "password":"sammy"
+    "password":"sam"
 }
-
 
 
 ### Reset password
@@ -42,3 +36,18 @@ Content-Type: application/json
     "email":"samuelmwaniki17@gmail.com",
     "code":"fe00"
 }
+
+### change password
+POST http://localhost:3030/users/changepwd
+Content-Type: application/json
+
+{
+    "email":"samuelmwaniki17@gmail.com",
+    "password":"sam"
+}
+
+
+### verify user
+POST http://localhost:3030/users/verifyuser
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbW15IiwiZW1haWwiOiJzYW11ZWxtd2FuaWtpMTdAZ21haWwuY29tIiwiaWQiOiJmYzdlMTIxNy00Y2Y5LTRlMGEtYmY1OS01YTM5NDEwMWRlNzYiLCJpYXQiOjE2OTI0Mjc2NjAsImV4cCI6MTY5MjQ0MjA2MH0.F3ibNyFQWyFY5KKyr1_B0-yJSCwAnjcFTjprIqpf3jI

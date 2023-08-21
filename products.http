@@ -1,0 +1,45 @@
+### get all categories
+GET http://localhost:3030/categories
+Content-Type: application/json
+
+
+### get category by id
+POST  http://localhost:3030/categories
+Content-Type: application/json
+
+{
+    "id":"2d4c365f-6778-4d8e-b4ec-e700bc2e3220"
+}
+
+### Create category
+POST http://localhost:3030/categories/new
+Content-Type: application/json
+
+{
+    "name":"cloths"
+}
+
+
+### get all products
+GET http://localhost:3030/products
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbW15IiwiZW1haWwiOiJzYW11ZWxtd2FuaWtpMTdAZ21haWwuY29tIiwiaWQiOiJmYzdlMTIxNy00Y2Y5LTRlMGEtYmY1OS01YTM5NDEwMWRlNzYiLCJpYXQiOjE2OTI0Mjc2NjAsImV4cCI6MTY5MjQ0MjA2MH0.F3ibNyFQWyFY5KKyr1_B0-yJSCwAnjcFTjprIqpf3jI
+
+### get product
+GET http://localhost:3030/products/e576e792-706c-430b-9d18-45d94a3b836a
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbW15IiwiZW1haWwiOiJzYW11ZWxtd2FuaWtpMTdAZ21haWwuY29tIiwiaWQiOiJmYzdlMTIxNy00Y2Y5LTRlMGEtYmY1OS01YTM5NDEwMWRlNzYiLCJpYXQiOjE2OTI0Mjc2NjAsImV4cCI6MTY5MjQ0MjA2MH0.F3ibNyFQWyFY5KKyr1_B0-yJSCwAnjcFTjprIqpf3jI
+
+
+### Create product
+POST http://localhost:3030/products/new
+Content-Type: application/json
+
+{
+    "name":"iphone 13 pro",
+    "description":"the device was designed and created in 2021. It was the best selling",
+    "price":70000,
+    "category_id":"006dd32a-7ac2-4445-9305-38aa446f5773",
+    "user_id":"fc7e1217-4cf9-4e0a-bf59-5a394101de76",
+    "image":"http://goskssd"
+}
