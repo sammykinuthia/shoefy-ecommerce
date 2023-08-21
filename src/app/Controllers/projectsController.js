@@ -77,7 +77,7 @@ export const createProduct = async (req, res) => {
     try {
         const { name, image, description, price, category_id } = req.body
         const user_id = req.info.id
-        console.log(req);
+        console.log(req.body);
         const id = v4()
         const conn = await pool
         if (conn.connected) {
