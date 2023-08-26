@@ -2,10 +2,22 @@ import bcrypt from 'bcrypt'
 import { v4 } from 'uuid'
 import jwt from 'jsonwebtoken'
 import {pool} from '../Config/config.js'
+import { loginSchema, registerSchema } from '../Validators/userValidators.js'
+// const dotenv = require ('dotenv')
+// dotenv.config()
+
 
 export const registerUser = async (req, res) => {
     try {
         const { username, email, password } = req.body
+
+        const {error}=registerSchema.validate(req.body)
+
+        if(error){
+            
+            return res.status(422).json(error.details)
+            
+        }
         const id = v4()
         const hashPwd = await bcrypt.hash(password, 4)
         const conn = await pool
@@ -35,6 +47,12 @@ export const registerUser = async (req, res) => {
 export const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body
+
+        const {error}=loginSchema.validate(req.body)
+
+        if(error){
+            return res.status(422).json(error.details)
+        }
         const conn = await pool
         if (conn.connected) {
             const user = await conn.request()

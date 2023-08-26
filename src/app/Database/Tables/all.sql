@@ -11,8 +11,8 @@ CREATE TABLE users(
     is_admin BIT DEFAULT 0,
 );
 GO
--- SELECT * FROM users
-
+SELECT * FROM users
+GO
 CREATE TABLE categories(
     id VARCHAR(200) PRIMARY KEY,
     name VARCHAR(200) UNIQUE NOT NULL,
