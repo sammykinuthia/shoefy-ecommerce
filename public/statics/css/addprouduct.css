@@ -1,0 +1,51 @@
+.container_add{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    margin: 2em auto;
+    text-align: center;
+    
+}
+
+form {
+    margin: 20px auto;
+    width: 80%;
+    padding: 20px;
+    background-color: #75c980;
+    border-radius: 10px;
+  }
+
+
+
+  input[type="number"],  input[type="text"],  textarea {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    color: #004466;
+    background-color: #f1ebeb;
+  }
+  
+  button[type="submit"] {
+    width: 60%;
+    background-color: #004466;
+    color: #fff;
+    font-weight: 600;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  button {
+    background-color: #004466;
+    color: #fff;
+    padding: 10px;
+    margin: 6px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
