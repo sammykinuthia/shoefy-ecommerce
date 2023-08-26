@@ -1,5 +1,10 @@
 import express from 'express'
 import path from 'path'
+
+import cors from 'cors'
+import bodyParser from 'body-parser'
+
+
 import { userRouter } from './app/Routers/usersRouter.js'
 import { projectsRouter } from './app/Routers/productsRouter.js'
 import { categoryRouter } from './app/Routers/categoriesRouter.js'
