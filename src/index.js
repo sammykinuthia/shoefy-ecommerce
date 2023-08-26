@@ -10,13 +10,12 @@ import { projectsRouter } from './app/Routers/productsRouter.js'
 import { categoryRouter } from './app/Routers/categoriesRouter.js'
 const app = express()
 app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 const PORT = 3030
-
 
 app.use('/users', userRouter)
 app.use('/products', projectsRouter)
 app.use('/categories', categoryRouter)
-
 
 app.use('/', express.static(path.join(path.dirname("./public"), 'public')))
 
