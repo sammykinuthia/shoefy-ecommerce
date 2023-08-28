@@ -26,7 +26,7 @@ export const SendPasswordResetCode = async () => {
                 };
                 try {
                     await sendMail(message);
-                    await pool.request().input("id", user.id).input("pin", pin).execute("uspMarkUserPasswordResetSent");
+                    await pool.request().input("id", user.id).input("pin", pin).execute("uspCheckVerificationCode");
 
                 } catch (error) {
                     console.log(error);
