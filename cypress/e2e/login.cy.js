@@ -32,7 +32,7 @@ describe("Login page tests", () => {
 
   it('Should navigate to the forgot password page when the "Forgot Password" link is clicked', () => {
     cy.contains("Forgot Password").click();
-    cy.url().should("include", "/newPassword"); // Assuming '/forgot-password' is the forgot password page URL
+    cy.url().should("include", "/newPassword"); 
   });
 
   it('Should navigate to the register page when the "Do not have account" link is clicked', () => {
