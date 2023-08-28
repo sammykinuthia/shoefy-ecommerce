@@ -43,6 +43,7 @@ export const getProduct = async (req, res) => {
             res.status(500).json({ "message": "error connecting to db" })
         }
     } catch (error) {
+        console.log("here");
         res.status(500).json({ Error: error.message })
 
     }
@@ -77,7 +78,7 @@ export const createProduct = async (req, res) => {
     try {
         const { name, image, description, price, category_id } = req.body
         const user_id = req.info.id
-        console.log(req);
+        console.log(req.body);
         const id = v4()
         const conn = await pool
         if (conn.connected) {
@@ -136,7 +137,8 @@ export const deleteProduct = async (req, res) => {
 
 export const addProductToCart = async (req, res) => {
     try {
-        const { product_id, user_id } = req.body
+        const { product_id } = req.body
+        const user_id = req.info.id
         const conn = await pool
         if (conn.connected) {
             const products = await conn.request()
@@ -164,7 +166,8 @@ export const addProductToCart = async (req, res) => {
 
 export const removeProductFromCart = async (req, res) => {
     try {
-        const { product_id, user_id } = req.body
+        const user_id = req.info.id
+        const { product_id } = req.body
         const conn = await pool
         if (conn.connected) {
             const products = await conn.request()
@@ -190,14 +193,15 @@ export const removeProductFromCart = async (req, res) => {
 
 export const getUserCartItems = async (req, res) => {
     try {
-        const { user_id } = req.params
+        const user_id  = req.info.id
+        console.log(user_id);
         const conn = await pool
         if (conn.connected) {
             const products = await conn.request()
                 .input("user_id", user_id)
                 .execute("uspGetUserCartItems")
             if (products.rowsAffected[0] == 0) {
-                res.json({ message: "no products found" })
+                res.json({ message: "no products found", data: products.recordset  })
             }
             else {
                 res.status(200).json({ data: products.recordset })
