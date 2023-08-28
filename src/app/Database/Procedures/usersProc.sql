@@ -38,3 +38,9 @@ BEGIN
     WHERE email = @email
 END;
 GO
+
+CREATE OR ALTER PROC uspIsAdmin (@id VARCHAR(200)) AS
+BEGIN
+    SELECT is_admin FROM users WHERE id=@id
+END;
+GO

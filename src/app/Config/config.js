@@ -20,3 +20,4 @@ export const sqlConfig = {
 }
 
 export const pool = mssql.connect(sqlConfig)
+

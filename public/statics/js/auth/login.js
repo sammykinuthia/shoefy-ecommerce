@@ -1,35 +1,38 @@
 // import { useFetchPost } from "./utilities.js"
+import { usePost, useGet } from "../utils.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-    const loginForm = document.getElementById("form-login");
-    loginForm.addEventListener("submit", handleLogin);
-});
 
-async function handleLogin(event) {
-    event.preventDefault();
-
-    const username = document.getElementById("username").value;
+document.getElementById("form-login").addEventListener('submit', async e => {
+    e.preventDefault()
+    const email = document.getElementById("email").value;
     const password = document.getElementById("passwd").value;
+    const errorElement = document.querySelector(".error");
 
-    const loginData = { username, password };
+    const loginData = { email, password };
 
     try {
-        const response = await fetch("http://localhost:3030/users/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(loginData)
-        });
-
-        if (response.ok) {
-            // Redirect to products page after successful login
-            window.location.href = "../products.html";
-        } else {
-            const errorElement = document.querySelector(".error");
-            errorElement.textContent = "Invalid username or password.";
+        const response = await usePost("/users/login", loginData)
+        console.log(response);
+        if(response.token){
+            localStorage.setItem("token",response.token)
+            errorElement.style.background = "green"
+            errorElement.textContent = response.message;
+            errorElement.style.visibility = "visible"
+            setTimeout(()=>{
+                errorElement.style.visibility = "hidden"
+                window.location.replace("/")
+            },2000)
         }
+        else{
+            errorElement.textContent = response.message;
+            errorElement.style.visibility = "visible"
+            setTimeout(()=>{
+                errorElement.style.visibility = "hidden"
+            },2000)
+            
+        }
+     
     } catch (error) {
         console.error("Error:", error);
     }
-}
+})
