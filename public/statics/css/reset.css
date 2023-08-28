@@ -162,7 +162,7 @@ select {
 .container {
     width: 80%;
     margin: 0 auto;
-    height: 100vh;
+    min-height: 70vh;
     padding: 1rem;
 }
 

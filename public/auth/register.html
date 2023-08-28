@@ -16,25 +16,20 @@
 <body>
 
     <div class="auth_pages">
-        <!-- <div class="logo">
-            <img src="public/statics/images/Shoefy.png" alt="ShoefyLogo">
-        </div> -->
-        
-
-    
+     
             <div class="login_right">
 
                 <div class-="login_form">
 
                     <h1>SignUp</h1>
                     <form id="form-registration" method="get">
-                        <p class="error"></p>
+                        <p  id="error" class="error"></p>
                         <label for="username">Username</label> <br />
                         <input type="text" id="username" placeholder="John" required /><br />
                         <label for="email">Email</label> <br />
                         <input type="email" id="email" placeholder="johndoe@gmail.com" required /><br />
                         <label for="passwd">Password</label><br />
-                        <input type="password" id="passwd" placeholder="********" required /><br />
+                        <input type="password" id="passwd" placeholder="********" autocomplete="current-password" required /><br />
                         <a href="./login.html">
                             <button type="submit">Create Account</button>
                         </a>

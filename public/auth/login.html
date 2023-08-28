@@ -1,70 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../statics/css/reset.css" />
-    <link rel="stylesheet" href="../statics/css/styles.css" />
-    <link rel="stylesheet" href="../statics/css/main.css" />
-    <title>Shoefy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
-  <body>
-    <div class="auth_pages">
-      <!-- <div class="logo">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../statics/css/reset.css" />
+  <link rel="stylesheet" href="../statics/css/styles.css" />
+  <link rel="stylesheet" href="../statics/css/main.css" />
+  <title>Shoefy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script type="module" src="../statics/js/auth/login.js"></script>
+</head>
+
+<body>
+  <div class="auth_pages">
+    <!-- <div class="logo">
             <img src="public/statics/images/Shoefy.png" alt="ShoefyLogo">
         </div> -->
-      <div class="login_left">
-        <span><h1>Welcome !</h1></span>
-        <hr style="width: 70px" />
-        <span
-          ><p class="subhead">
-            Experience the Elegance of Effortless Shopping at Shoefy. Our Online
-            Shelves are Stocked wit Carefully Curated Collections, inviting you
-            to Explore, Choose And Evaluate Your Everyday Look!
-          </p></span
-        >
-      </div>
+    <div class="login_left">
+      <span>
+        <h1>Welcome !</h1>
+      </span>
+      <hr style="width: 70px" />
+      <span>
+        <p class="subhead">
+          Experience the Elegance of Effortless Shopping at Shoefy. Our Online
+          Shelves are Stocked wit Carefully Curated Collections, inviting you
+          to Explore, Choose And Evaluate Your Everyday Look!
+        </p>
+      </span>
+    </div>
 
-      <div class="login_right">
-        <div class-="login_form">
-          <h1>Login</h1>
-          <form id="form-login" method="get">
-            <p class="error"></p>
-            <label for="username">Username</label> <br />
-            <input type="text" id="username" placeholder="John" /><br />
-            <label for="passwd">Password</label><br />
-            <input type="password" id="passwd" placeholder="********" /><br />
-            <a href="../products.html"
-              ><button type="submit">Sign In</button>
-            </a>
-          </form>
-          <p>
-            Don't have an account?
-            <a href="./register.html" class="btn_signup">Sign Up</a>
-          </p>
+    <div class="login_right">
+      <div class-="login_form">
+        <h1>Login</h1>
+        <form id="form-login">
+          <p class="error"></p>
+          <label for="email">Email</label> <br />
+          <input required type="email" id="email" placeholder="John@gmail.com" /><br />
+          <label for="passwd">Password</label><br />
+          <input required type="password" id="passwd" placeholder="********" /><br />
+          <button type="submit">Sign In</button>
 
-          <a href="./newPassword.html"><p>Forgot Password?</p></a>
+        </form>
+        <p>
+          Don't have an account?
+          <a href="./register.html" class="btn_signup">Sign Up</a>
+        </p>
 
-          <span class="icons">
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-twitter"></a>
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-google"></a>
-            <a href="#" class="fa fa-youtube"></a>
-            <a href="#" class="fa fa-pinterest"></a>
-          </span>
-        </div>
+        <a href="./newPassword.html">
+          <p>Forgot Password?</p>
+        </a>
+
+        <span class="icons">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-google"></a>
+          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="fa fa-pinterest"></a>
+        </span>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

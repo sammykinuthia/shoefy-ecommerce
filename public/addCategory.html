@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./statics/css/reset.css">
     <link rel="stylesheet" href="./statics/css/styles.css">
     <script type="module" defer src="./statics/js/global.js"></script>
-    <script type="module" defer src="./statics/js/products.js"></script>
+    <script type="module" defer src="./statics/js/addCategory.js"></script>
     <title>Shoefy</title>
 </head>
 
@@ -16,19 +16,18 @@
 
     </header>
     <main class="container">
-        <div class="filter-section">
-            <form>
+        <div class="add-product">
+            <h3>Add product</h3>
+            <form method="post" id="form" enctype="multipart/form-data">
+                <p class="error"></p>
                 <label>
-                    Filter by category
-                    <select name="category" id="category-filter">
-                        <option value="">Select Category</option>
-                    </select>
+                    Category Name
+                    <input name="name" id="name" type="text">
                 </label>
+                <div>
+                    <button type="submit">Create Category</button>
+                </div>
             </form>
-        </div>
-        <div id="products" class="products">
-            
-        
         </div>
     </main>
     <footer>
