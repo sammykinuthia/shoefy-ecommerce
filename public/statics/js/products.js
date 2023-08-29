@@ -1,5 +1,13 @@
 import { usePost, useGet } from "./utils.js";
 
+let category = null
+const categorySection = document.getElementById("category-filter")
+categorySection.addEventListener("change", e => {
+    e.preventDefault()
+    category = categorySection.value
+    renderProducts()
+})
+
 renderProducts()
 async function getProducts() {
     const products = await useGet('/products')
@@ -16,7 +24,13 @@ async function renderProducts() {
         productHtml = "<h4>No products</h4>"
     }
     else {
-        products.data.forEach(product => {
+        let productList = []
+        if (category)
+            productList = products.data.filter(p => p.category == category)
+        else
+        productList = products.data
+        console.log(productList);
+        productList.forEach(product => {
             productHtml += `
             <div class="product" id="${product.id}">
                 <div class="product-img-section">
@@ -25,6 +39,7 @@ async function renderProducts() {
                 <div class="product-lower">
                     <p class="product-title">${product.name}</p>
                     <h4 class="product-price">${product.price}</h4>
+                    
                     <button  class="view-product">View product</button>
                 </div>
             </div>
@@ -36,21 +51,21 @@ async function renderProducts() {
 }
 
 function handleViewProduct() {
-    let products = document.getElementsByClassName("view-product") 
-    
-    setTimeout(()=>{
-        for(let i = 0; i< products.length;i++){
-            products[i].addEventListener('click',e=>{
+    let products = document.getElementsByClassName("view-product")
+
+    setTimeout(() => {
+        for (let i = 0; i < products.length; i++) {
+            products[i].addEventListener('click', e => {
                 let productId = e.target.parentNode.parentNode.id
-                console.log("clicked",productId);
-                sessionStorage.setItem("productId",productId)
+                console.log("clicked", productId);
+                sessionStorage.setItem("productId", productId)
                 window.location.replace("/product.html")
             })
         }
 
-    },1000)
+    }, 1000)
 
-   
+
 }
 
 async function getCategories() {

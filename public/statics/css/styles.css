@@ -309,6 +309,11 @@ table th:nth-child(3), table td:nth-child(3){
    cursor: pointer;
 }
 
+/* reset password page */
+#new-password-section{
+    display: none;
+}
+
 @media screen and (max-width:800px) {
     nav {
         padding: 1rem 3%;
@@ -327,6 +332,8 @@ table th:nth-child(3), table td:nth-child(3){
         align-items: start;
         background: inherit;
         order: 1;
+        border: 1px solid grey;
+        padding: .6rem;
     }
     #nav-items > *{
         width: 100%;
