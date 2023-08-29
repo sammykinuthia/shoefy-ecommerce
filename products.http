@@ -34,15 +34,15 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbW15IiwiZW1haWwiO
 ### Create product
 POST http://localhost:3030/products/new
 Content-Type: application/json
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9uYW4iLCJlbWFpbCI6Im9uYW5AZ21haWwuY29tIiwiaWQiOiJkN2ZlNDM4Zi02MTM2LTQ2MzUtYWUxYS0wZmEwZmU2MzM1NzkiLCJpYXQiOjE2OTI3MDc0NDQsImV4cCI6MTY5MjcyMTg0NH0.aXNueKUgbvI1_sbnukczdinY-rPZfP5Ovm8NfTBpWF0
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFkbWluIiwiZW1haWwiOiJraW1hY2hpYUBnbWFpbC5jb20iLCJpZCI6IjAyYTJmY2ViLWJiY2QtNDk4Ni04OTcwLTIyZGJlMzk5NTg5YSIsImlhdCI6MTY5MzIzMjA2NCwiZXhwIjoxNjkzMjQ2NDY0fQ.YL1GfoQPQsX7Q47EXFqb96cO_L7ZAtbHoj5nYSMuX9U
 
 {
-    "name":"iphone 12",
+    "name":"iphone o12",
     "description":"the device was designed and created in 2021. It was the best selling",
     "price":70000,
     "category_id":"006dd32a-7ac2-4445-9305-38aa446f5773",
     "user_id":"fc7e1217-4cf9-4e0a-bf59-5a394101de76",
-    "image":"http://goskssd"
+    "image":"http://goskslkshd"
 }
 
 ### get carts

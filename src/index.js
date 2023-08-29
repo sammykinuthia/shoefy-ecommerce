@@ -1,3 +1,4 @@
+
 import express from 'express'
 import path from 'path'
 import { userRouter } from './app/Routers/usersRouter.js'
@@ -18,6 +19,5 @@ app.use('/carts', cartRouter)
 app.use('/', express.static(path.join(path.dirname("./public"), 'public')))
 
 app.listen(PORT, () => {
-    console.log(`app listening at http://localhost:${PORT}`);
-})
-
+  console.log(`app listening at http://localhost:${PORT}`);
+});
