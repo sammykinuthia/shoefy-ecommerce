@@ -16,7 +16,7 @@ describe("Login page tests", () => {
   });
 
   it("should fill in and submit the login form", () => {
-    cy.get("input#username").type("kimachia");
+    cy.get("input#email").type("kimachia");
     cy.get("input#passwd").type("pass");
   });
 
@@ -25,14 +25,14 @@ describe("Login page tests", () => {
   });
 
   it("should show error messages when login fails", () => {
-    cy.get("input#username").type("kimachia");
+    cy.get("input#email").type("kimachia");
     cy.get("input#passwd").type("password123");
     cy.get("form#form-login").click();
   });
 
   it('Should navigate to the forgot password page when the "Forgot Password" link is clicked', () => {
     cy.contains("Forgot Password").click();
-    cy.url().should("include", "/newPassword"); // Assuming '/forgot-password' is the forgot password page URL
+    cy.url().should("include", "/newPassword"); 
   });
 
   it('Should navigate to the register page when the "Do not have account" link is clicked', () => {

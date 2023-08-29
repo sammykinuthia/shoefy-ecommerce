@@ -181,7 +181,7 @@ export const verifyUser = async (req, res) => {
   }
 };
 
-
+// }
 
 export const isAdmin = async(req,res)=>{
     try {

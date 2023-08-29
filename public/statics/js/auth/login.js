@@ -26,6 +26,7 @@ document.getElementById("form-login").addEventListener('submit', async e => {
         else{
             errorElement.textContent = response.message;
             errorElement.style.visibility = "visible"
+            console.log(response);
             setTimeout(()=>{
                 errorElement.style.visibility = "hidden"
             },2000)
