@@ -32,9 +32,10 @@ async function handleRegistration(event) {
          else {
             const errorSection = document.getElementById("error")
             errorSection.textContent = response.message;
+            console.log(response);
             setTimeout(() => {
                 errorSection.style.visibility = "hidden"
-                window.location.replace("/")
+                // window.location.replace("/")
             }, 3000)
         }
     } catch (error) {
