@@ -175,7 +175,40 @@ export const verifyUser = async (req, res) => {
     } else {
       res.status(401).json({ message: "token not found" });
     }
+
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
+
+// }
+
+export const isAdmin = async(req,res)=>{
+    try {
+        if(req.info){
+            const userId = req.info.id;
+            const conn = await pool
+            if (conn.connected) {
+        
+                const result = await conn.request()
+                    .input("id", userId)
+                    .execute("uspIsAdmin")
+                if (result.rowsAffected[0] == 0) {
+                    res.status(500).json({ message: "user not found" })
+                }
+                else {
+                    res.status(200).json({ data: result.recordset})
+                }
+            }
+            else {
+                res.status(500).json({ error: "error connecting to db" })
+            }
+        }
+        else{
+            res.status(401).json({message:"token not found"})
+        }
+    } catch (error) {
+        res.status(500).json({ error: error.message })
+    }
+}
+

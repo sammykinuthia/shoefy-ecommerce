@@ -16,7 +16,7 @@ describe("Login page tests", () => {
   });
 
   it("should fill in and submit the login form", () => {
-    cy.get("input#username").type("kimachia");
+    cy.get("input#email").type("kimachia");
     cy.get("input#passwd").type("pass");
   });
 
@@ -25,7 +25,7 @@ describe("Login page tests", () => {
   });
 
   it("should show error messages when login fails", () => {
-    cy.get("input#username").type("kimachia");
+    cy.get("input#email").type("kimachia");
     cy.get("input#passwd").type("password123");
     cy.get("form#form-login").click();
   });

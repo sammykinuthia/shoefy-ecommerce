@@ -1,86 +1,44 @@
-// import { useFetchPost } from "./utilities.js";
+import { usePost, useGet } from "../utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const registrationForm = document.getElementById("form-registration");
-  registrationForm.addEventListener("submit", handleRegistration);
+    const registrationForm = document.getElementById("form-registration");
+    registrationForm.addEventListener("submit", handleRegistration);
 });
 
 async function handleRegistration(event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  const username = document.getElementById("username").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("passwd").value;
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("passwd").value;
 
-  const registrationData = { username, email, password };
+    const registrationData = { username, email, password };
 
-  try {
-      const response = await fetch("http://localhost:3030/users/register", {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json"
-          },
-          body: JSON.stringify(registrationData)
-      });
+    try {
+           const response = await usePost("/users/register", registrationData)
+        if (response.token) {
+            console.log(response);
+            localStorage.setItem("token", response.token)
+            const errorSection = document.getElementById("error")
+            errorSection.style.background = "green"
+            errorSection.textContent = response.message;
+            errorSection.style.visibility = "visible"
+            setTimeout(() => {
+                errorSection.style.visibility = "hidden"
+                // window.location.replace("/")
+            }, 2000)
 
-      if (response.ok) {
-          const data = await response.json();
-          // Redirect to login page after successful registration
-          window.location.href = "./login.html";
-      } else {
-          const errorData = await response.json();
-          const errorElement = document.querySelector(".error");
-          errorElement.textContent = errorData.message;
-      }
-  } catch (error) {
-      console.error("Error:", error);
-  }
+        }
+         else {
+            const errorSection = document.getElementById("error")
+            errorSection.textContent = response.message;
+            console.log(response);
+            setTimeout(() => {
+                errorSection.style.visibility = "hidden"
+                // window.location.replace("/")
+            }, 3000)
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
 }
-
-
-
-
-// const username = document.getElementById("username").value;
-// const email = document.getElementById("email").value;
-// const password = document.getElementById("passwd").value;
-
- 
-
-// registerForm.addEventListener("submit", (e) => {
-
-//   e.preventDefault();
-
-
-// if (user) {
-//   axios
-
-//     .post(
-//       "http://localhost:3030/users/register",
-
-//       {
-//         username: username.value,
-
-//         email: email.value,
-
-//         password: password.value,
-
-
-//       },
-
-//       {
-//         headers: {
-//           "Content-type": "application/json",
-//         },
-//       }
-//     )
-
-//     .then((response) => {
-//       console.log(response.data);
-
-//       window.location.href = "./login.html";
-//     })
-
-//     .catch((e) => {
-//       console.log(e);
-//     });
-// }
