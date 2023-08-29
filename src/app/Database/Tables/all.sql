@@ -52,4 +52,4 @@ CREATE TABLE resetCode(
 );
 GO
 -- DROP TABLE resetCode
- 
+ SELECT * FROM resetCode
