@@ -15,5 +15,8 @@ form.addEventListener("submit", async e => {
     })
    const r = await res.json()
    console.log(r);
+   productName.textContent = ""
+   window.location.reload()
+   
 })
 
