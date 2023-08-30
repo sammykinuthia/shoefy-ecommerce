@@ -48,6 +48,7 @@ form.addEventListener("submit", async e => {
     })
    const r = await res.json()
    console.log(r);
+   form.reset()
 })
 
 productImage.addEventListener("change",e=>{

@@ -43,9 +43,10 @@ setTimeout(() => {
     getCartCount()
     handleCartClick()
     handleToggle()
+    handleLogout()
 }, 200)
 
-async function getCartCount() {
+export async function getCartCount() {
     let cartCountSection = document.getElementById("cart-count")
     fetch("/carts", { headers: { token, 'Content-Type': "application/json" } })
         .then(e => e.json()).then(e => {
@@ -76,3 +77,11 @@ function handleToggle() {
         }
     })
 }
+
+function handleLogout() {
+    document.getElementById("logout").addEventListener('click', () => {
+        localStorage.removeItem("token")
+        window.location.replace("/auth/login.html")
+    })
+}
+

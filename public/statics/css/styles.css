@@ -140,6 +140,7 @@ nav a{
 .products {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
     gap: 1rem;
     justify-content: center;
     align-items: center;
@@ -160,6 +161,21 @@ nav a{
     border-radius: .3rem;
 
 
+}
+.card-btns{
+display: grid;    
+grid-template-columns: 1fr 1fr;
+align-items: center;
+gap: 1rem;
+}
+.card-btns button{
+    padding: .3rem;
+    background: var(--bg-secondary);
+}
+.view-product{
+    height: 100%;
+    border: 1px solid green;
+    box-shadow: 0 0 3px 1px green;
 }
 
 /* add product */
